@@ -11,6 +11,13 @@ public class GameTimeWithMinutes {
         int startMinute = scanner.nextInt();
         int endHour = scanner.nextInt();
         int endMinute = scanner.nextInt();
+        // Проверка введенных значений
+        if (startHour < 0 || startHour > 23 || startMinute < 0 || startMinute > 59 ||
+                endHour < 0 || endHour > 23 || endMinute < 0 || endMinute > 59) {
+            System.out.println("Ошибка: Некорректные значения часов или минут.");
+            scanner.close();
+            return;
+        }
 
         // Convert start and end times to minutes
         int startTimeInMinutes = startHour * 60 + startMinute;
